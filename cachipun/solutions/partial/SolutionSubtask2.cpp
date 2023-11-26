@@ -1,4 +1,5 @@
-// @ocimatic should-pass=[st1, st2]
+// @ocimatic should-pass=[st1]
+// @ocimatic should-pass=[st2]
 // @ocimatic should-fail=[st3]
 // Ojala acepte eso uf
 #include <iostream>
