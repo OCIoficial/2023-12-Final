@@ -9,10 +9,9 @@ import sys
 random.seed(sys.argv[1])
 
 # The min and max are in positions 2 and 3
-MIN = int(sys.argv[2])
-MAX = int(sys.argv[3])
+n = int(sys.argv[2])
+k = int(sys.argv[3])
 
-# Check that the range is valid
-assert MIN <= MAX
-
-print(random.randint(MIN, MAX), random.randint(MIN, MAX))
+print(n, k)
+for _ in range(k):
+	print(" ".join(str(x) for x in random.choices([*range(3)], k = n)))

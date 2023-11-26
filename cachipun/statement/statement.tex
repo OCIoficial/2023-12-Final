@@ -7,7 +7,7 @@
 \begin{document}
 \begin{problemDescription}
   Finalmente ha llegado el día que todos estaban esperando: la fase final de la Olimpiada de
-  Cachipun Internacional (OCI). En esta competencia, $n$ oponentes se enfrentan en $k$ rondas de combate
+  Cachipun Interregional (OCI). En esta competencia, $n$ oponentes se enfrentan en $k$ rondas de combate
   todos-contra-todos, donde en cada ronda, cada participante elige una opción entre piedra, 
   papel y tijera. Cada jugador gana $1$ punto por cada contrincante que venció, pierde $1$ por cada 
   contrincante que lo venció, y los empates no afectan su puntuación.
@@ -28,9 +28,11 @@
 \end{problemDescription}
 
 \begin{inputDescription}
-  Te dan $n (2 \leq n \leq 1000), k (1 \leq k \leq 1000)$ y la matriz de $k \times n$, 
-  donde la $i$-ésima fila representa la $i$-ésima ronda, y la $j$-ésima columna representa la jugada del $j$-ésimo jugador.
-  El carácter R representa roca, P representa papel y T tijeras.
+  En la primera linea recibirás $n (2 \leq n \leq 1000)$ y $k (1 \leq k \leq 1000)$, 
+  la cantidad de jugadores y de rondas respectivamente. En las siguientes $k$ filas 
+  recibirás la información del torneo. La $i+1$-ésima fila representará la $i$-ésima 
+  ronda, y contendra $n$ valores. El $j$-ésimo valor representa la jugada del $j$-ésimo jugador.
+  Para representar las jugadas, usaremos la convención de que $0$ representa piedra, $1$ papel y $2$ tijeras.
 \end{inputDescription}
 
 \begin{outputDescription}
@@ -46,6 +48,7 @@
 \begin{sampleDescription}
 \sampleIO{sample-1}
 \sampleIO{sample-2}
+\sampleIO{sample-3}
 \end{sampleDescription}
 
 \end{document}
