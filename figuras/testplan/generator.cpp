@@ -24,7 +24,7 @@ vector<int> dj = {-1, 0, 1, 0};
 // se escoge un punto (i0, j0) al azar.
 // luego se ejecuta un BFS desde ese punto utilizando una priority queue, asignando prioridades al azar a los elementos
 // cosa de que al escogerlos se tome un elemento aleatorio adyacente a los que ya estan puestos.
-vector<vector<bool>> generateGrid(int n, int m, int i0, int j0, int cnt, uniform_int_distribution<int> prio){    
+vector<vector<bool>> generateGrid(int n, int m, int i0, int j0, int cnt, uniform_int_distribution<int> prio, mt19937 gen){    
     vector<vector<bool>> vis(n, vector<bool>(m, 0));
     priority_queue<pair<int,pair<int,int>>> q;
     q.push({-1,{i0, j0}});
@@ -40,7 +40,7 @@ vector<vector<bool>> generateGrid(int n, int m, int i0, int j0, int cnt, uniform
             int xx = x+di[k];
             int yy = y+dj[k];
             if(xx < 0 || xx >=n || yy < 0 || yy >= n) continue;
-            q.push(prio(gen), {xx,yy}});
+            q.push({prio(gen), {xx,yy}});
         }
     }
     return vis;
@@ -68,8 +68,8 @@ int main(int argc, char *argv[]) {
     int j1 = dist2(gen);
 
     // generamos la figura con los parámetros generados.
-    vector<vector<bool>> grid1 = generateGrid(n, m, i0, j0, cnt, prio);
-    vector<vector<bool>> grid2 = generateGrid(n, m, i1, j1, cnt, prio);
+    vector<vector<bool>> grid1 = generateGrid(n, m, i0, j0, cnt, prio, gen);
+    vector<vector<bool>> grid2 = generateGrid(n, m, i1, j1, cnt, prio, gen);
     
     // printeamos las grillas
     for(int i = 0; i<n; i++){
