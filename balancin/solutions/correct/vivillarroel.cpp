@@ -16,7 +16,6 @@ int main() {
 			}
 		}
 	}
-	cout << gcd << endl;
 	if (c/gcd <= n && g/gcd <= n){
 		cout << "SI\n";
 	}
