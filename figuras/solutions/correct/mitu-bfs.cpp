@@ -68,7 +68,7 @@ int main(){
 		vis[x][y] = 1;
 		for(int k = 0; k<4; k++){
 			int xx = x+di[k];
-			int yy = y+di[k];
+			int yy = y+dj[k];
 			if(xx < 0 || xx >=n || yy < 0 || yy >= n || vis[xx][yy]) continue;
 			q.push({xx,yy});
 			dist[xx][yy] = d + 1;
