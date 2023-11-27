@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
   assert(MIN <= MAX);
 
   std::uniform_int_distribution<int> dist(MIN, MAX);
-  std::cout << dist(gen) << " " << dist(gen) << std::endl;
+  std::cout << dist(gen) << " " << dist(gen) << " " << dist(gen) << std::endl;
 
   return 0;
 }
