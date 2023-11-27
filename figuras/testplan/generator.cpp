@@ -14,12 +14,6 @@ using namespace std;
 vector<int> di = {0, -1, 0, 1};
 vector<int> dj = {-1, 0, 1, 0};
 
-int getRandomNumber(int a, int b) {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distribution(a, b);
-    return distribution(gen);
-}
 // generateGrid
 // n: número de filas
 // m: número de columnas
@@ -30,7 +24,7 @@ int getRandomNumber(int a, int b) {
 // se escoge un punto (i0, j0) al azar.
 // luego se ejecuta un BFS desde ese punto utilizando una priority queue, asignando prioridades al azar a los elementos
 // cosa de que al escogerlos se tome un elemento aleatorio adyacente a los que ya estan puestos.
-vector<vector<bool>> generateGrid(int n, int m, int i0, int j0, int cnt){
+vector<vector<bool>> generateGrid(int n, int m, int i0, int j0, int cnt, uniform_int_distribution<int> prio){    
     vector<vector<bool>> vis(n, vector<bool>(m, 0));
     priority_queue<pair<int,pair<int,int>>> q;
     q.push({-1,{i0, j0}});
@@ -46,7 +40,7 @@ vector<vector<bool>> generateGrid(int n, int m, int i0, int j0, int cnt){
             int xx = x+di[k];
             int yy = y+dj[k];
             if(xx < 0 || xx >=n || yy < 0 || yy >= n) continue;
-            q.push({getRandomNumber(1, n*m + 1), {xx,yy}});
+            q.push(prio(gen), {xx,yy}});
         }
     }
     return vis;
@@ -54,23 +48,28 @@ vector<vector<bool>> generateGrid(int n, int m, int i0, int j0, int cnt){
 
 
 int main(int argc, char *argv[]) {
+    std::hash<std::string> hasher;
+    std::mt19937 gen(hasher(argv[1]));
     // generamos la grilla acorde a las dimensiones n*m < 2*1e5
-    int n = getRandomNumber(1, 2*100000);
-    int m = (2*100000)/n;
+    int n = atoi(argv[2]);
+    int m = atoi(argv[3]);
     cout << n << " " << m << '\n';
 
     // generamos un número que indica cuantos 1's habrá en la grilla
-    int cnt = getRandomNumber(1, n*m);
+    int cnt = atoi(argv[4]);
 
+    std::uniform_int_distribution<int> dist(0, n-1);
+    std::uniform_int_distribution<int> dist2(0, m-1);
+    std::uniform_int_distribution<int> prio(1, n*m + 1);
     // para ambas grillas, escogemos coordenadas al azar desde las cuales se generará la figura
-    int i0 = getRandomNumber(0, n-1);
-    int j0 = getRandomNumber(0, m-1);
-    int i1 = getRandomNumber(0, n-1);
-    int j1 = getRandomNumber(0, m-1);
+    int i0 = dist(gen);
+    int j0 = dist2(gen);
+    int i1 = dist(gen);
+    int j1 = dist2(gen);
 
     // generamos la figura con los parámetros generados.
-    vector<vector<bool>> grid1 = generateGrid(n, m, i0, j0, cnt);
-    vector<vector<bool>> grid2 = generateGrid(n, m, i1, j1, cnt);
+    vector<vector<bool>> grid1 = generateGrid(n, m, i0, j0, cnt, prio);
+    vector<vector<bool>> grid2 = generateGrid(n, m, i1, j1, cnt, prio);
     
     // printeamos las grillas
     for(int i = 0; i<n; i++){
