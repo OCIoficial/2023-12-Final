@@ -38,7 +38,7 @@
   border ; echo 999998 999999 1000000
 
 [Subtask 3]
-  @extends subtask 1
+  @extends subtask 2
   rand-3 ; gen_random.cpp 1 1000000000
   rand-3 ; gen_random.cpp 1 1000000000
   rand-3 ; gen_random.cpp 1 1000000000
