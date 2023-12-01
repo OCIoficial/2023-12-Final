@@ -6,31 +6,57 @@
 
 \begin{document}
 \begin{problemDescription}
-	Camila y Gabriel fueron al parque a jugar a su juego favorito: el balancín.
-	En este emocionante deporte de coordinación y equilibrio, dos jugadores se sientan en mitades opuestas del balancín y suben y bajan, pero para asegurarse de que el balancín pueda moverse adecuadamente, ambos jugadores deben ejercer la misma fuerza en cada lado.
+    Camila y Gabriel fueron al parque a jugar a su juego favorito: el balancín.
+    En este emocionante juego de coordinación y equilibrio, dos personas se
+    sientan en mitades opuestas de una tabla con un eje de rotación central.
+    Ambos participantes ocupan su peso para ejercer fuerza en su lado de la tabla,
+    de forma que mientras uno bajo el otro sube, ocasionando así un movimiento
+    continuo hacia arriba y hacia abajo.
+    !`Es divertidísimo!
 
-	La fuerza de cada jugador depende de dos factores: de su peso y de su distancia con respecto al centro del balancín, y se calcula como $peso * distancia$.
+    Para que el balancín se mueva adecuadamente, ambas persona deben ejercer
+    la misma fuerza en cada lado.
+    La fuerza que ejerce una persona depende de su peso y de su distancia
+    al centro del balancín.
+    Específicamente, la fuerza se calcula como $peso \times distancia$.
 
-	El balancín del parque tiene $n$ asientos en cada lado, donde cada uno de ellos está enumerado del $1$ al $n$, y el i-ésimo de ellos está a una distancia i del centro.
+    Para poder jugar, Camila y Gabriel deben buscar una forma de ejercer
+    la misma fuerza.
+    Ellos no pueden cambiar su peso, pero si pueden elegir en que parte
+    del balancín se sientan.
+    El balancín del parque tiene $n$ asientos en cada lado,
+    estos son numerados del $1$ al $n$,
+    y el $i$-ésimo asiento está a una distancia $i$ del centro.
 
-	Por ejemplo, si Gabriel y Camila pesan $50kg$ y $30kg$ respectivamente en un balancín que tiene 10 asientos por lado, Gabriel se puede sentar en la posición $6$ y Camila en la $10$, por lo que la fuerza que ejercerá cada uno será $50*6=300=30*10$, y como son iguales, podrán jugar.
+    Por ejemplo, si Gabriel y Camila pesan $50kg$ y $30kg$
+    respectivamente y el balancín tiene 10 asientos por lado,
+    Gabriel puede sentarse en la posición $6$ y Camila en la $10$.
+    De esta forma, la fuerza que ejercerá cada uno será $50*6=300=30*10$,
+    y como son iguales, podrán jugar.
 
-	Ambos están muy emocionados por comenzar, pero no están seguros de si existe una forma de sentarse que les permita jugar, por lo que te pidieron que lo averigues por ellos. ¿Podrás ayudarlos?
+    Ambos están muy emocionados por comenzar, pero no están seguros de si
+    existe una forma de sentarse que les permita jugar, por lo que te pidieron
+    que lo averigues por ellos. ¿Podrás ayudarlos?
 
 \end{problemDescription}
 
 \begin{inputDescription}
-	En la primera línea, se entregan tres enteros $n, c, g$ $(1 \leq n, c, g \leq 10^9)$ que denotan la cantidad de asientos del balancín, el peso de Camila y el peso de Gabriel respectivamente.
+    La entrada consiste en una línea con tres enteros $n, c, g$
+    $(1 \leq n, c, g \leq 10^9)$ correspondientes respectivamente
+    a la cantidad de asientos del balancín, el peso de Camila
+    y el peso de Gabriel.
 \end{inputDescription}
 
 \begin{outputDescription}
-	Debes imprimir "SI" si existe una forma de que Camila y a Gabriel se sienten en el balancín tal que puedan jugar, y "NO" en caso contrario.
+	Debes imprimir \texttt{SI} si existe una forma de que Camila
+	y a Gabriel se sienten en el balancín tal que puedan jugar,
+    y \texttt{NO} en caso contrario.
 \end{outputDescription}
 
 \begin{scoreDescription}
-	\subtask{??} Se probarán varios casos de prueba donde $1 \leq g, c, n \leq 10^3$. (Tarea $O(n^2)$)
-	\subtask{??} Se probarán varios casos de prueba donde $1 \leq g, c, n \leq 10^6$. (Tarea $O(n)$)
-	\subtask{??} Se probarán varios casos de prueba sin restricciones adicionales. (Tarea $O(\sqrt{pmax})$)
+	\subtask{??} Se probarán varios casos de prueba donde $1 \leq g, c, n \leq 10^3$.
+	\subtask{??} Se probarán varios casos de prueba donde $1 \leq g, c, n \leq 10^6$.
+	\subtask{??} Se probarán varios casos de prueba sin restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
