@@ -21,7 +21,7 @@
   @extends subtask 1
 
   sample ; copy statement/sample-2.in
-  sample ; copy statement/sample-3.in  
+  sample ; copy statement/sample-3.in
 
   rand_chico ; gen_random.py 20 10
   rand_chico ; gen_random.py 15 5
@@ -35,6 +35,7 @@
   empate ; gen_tie.py 100 1000
 
 [Subtask 3]
+  @extends subtask 2
 
   rand_maximo ; gen_random.py 1000 1000
   rand_maximo ; gen_random.py 1000 1000

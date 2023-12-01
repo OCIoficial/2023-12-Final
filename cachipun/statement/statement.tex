@@ -6,37 +6,60 @@
 
 \begin{document}
 \begin{problemDescription}
-  Finalmente ha llegado el día que todos estaban esperando: la fase final de la Olimpiada de
-  Cachipun Interregional (OCI). En esta competencia, $n$ oponentes se enfrentan en $k$ rondas de combate
-  todos-contra-todos, donde en cada ronda, cada participante elige una opción entre piedra, 
-  papel y tijera. Cada jugador gana $1$ punto por cada contrincante que venció, pierde $1$ por cada 
-  contrincante que lo venció, y los empates no afectan su puntuación.
+  Finalmente ha llegado el día que todos estaban esperando:
+  la fase final de la Olimpiada de Cachipún Interregional (OCI).
+  En esta competencia, $n$ oponentes se enfrentan en $k$ rondas
+  en la modalidad \emph{todos contra todos}.
+  En cada ronda, los participantes deben elegir entre jugar piedra, papel o tijera.
+  Como es tradicional, la tijera le gana al papel, el papel a la piedra y la piedra a
+  la tijera.
+  Luego de que todos los participantes revelan su opción de forma simultánea, se
+  calcula el puntaje de acuerdo a la cantidad de victorias y derrotas.
+  Específicamente, cada participante gana $1$ punto por cada victoria
+  y pierde $1$ punto por cada derrota.
+  Los empates no afectan la puntuación.
 
-  Por ejemplo, en una ronda con $5$ jugadores, donde tú eres el jugador 1 y los jugadores juegan de 
-  la siguiente forma:
+  Por ejemplo, considera una ronda para una competencia con $5$ participantes donde
+  cada uno juega de la siguiente forma:
+  \begin{center}
+    \includegraphics[scale=0.8]{ronda.eps}
+  \end{center}
+  Si nos concentramos en el participante 1, este le gana a los participantes 3 y 5
+  (la piedra le gana al papel), sumando $2$ puntos.
+  Adicionalmente, pierde contra el participante 2 (la piedra pierde contra el papel)
+  lo cual resta $1$ punto.
+  Finalmente, empata contra el participante 4 lo que no afecta el puntaje.
+  Por consiguiente, el participante 1 obtiene puntaje igual a $1$ al final de la ronda.
 
-  \includegraphics{ronda.eps}
+  El \emph{puntaje final} de un participante luego de jugadas la $k$ rondas
+  es igual a la suma de los puntajes que obtuvo en cada ronda.
 
-  Tú le ganarías a los jugadores 3 y 5, obteniendo $2$ puntos, pierdes contra el jugador 2 que resta $1$ 
-  punto, y empatas con el jugador 4, para un resultado total de $1$ punto a tu favor.
-
-  Normalmente, el registro de los puntos se maneja utilizando el Cachipun Management System (CMS), 
-  sin embargo, Diego encontró una vulnerabilidad en el software, y como no hay tiempo suficiente 
-  para arreglarlo, la administración decidió pedirte a ti que crees un programa que lo sustituya.
+  Históricamente, el registro de puntuación se ha manejado utilizando el
+  Cachipún Management System (CMS), sin embargo, la organización ha encontrado
+  una vulnerabilidad en el software, que parece ser muy difícil de arreglar.
+  Es por esto que han decidió pedirte a ti que crees un nuevo programa que lo
+  sustituya.
 
   Quedan menos de 4 horas para que comience la competencia, ¿podrás salvar la OCI?
 \end{problemDescription}
 
 \begin{inputDescription}
-  En la primera linea recibirás $n (2 \leq n \leq 1000)$ y $k (1 \leq k \leq 1000)$, 
-  la cantidad de jugadores y de rondas respectivamente. En las siguientes $k$ filas 
-  recibirás la información del torneo. La $i+1$-ésima fila representará la $i$-ésima 
-  ronda, y contendra $n$ valores. El $j$-ésimo valor representa la jugada del $j$-ésimo jugador.
-  Para representar las jugadas, usaremos la convención de que $0$ representa piedra, $1$ papel y $2$ tijeras.
+  La primera línea de la entrada contiene dos enteros $n$ ($2 \leq n \leq 1000$)
+  y $k$ ($1 \leq k \leq 1000$), correspondientes a la cantidad de jugadores y de
+  rondas respectivamente.
+  Cada jugador es identificado con un entero entre 1 y $n$, mientras que las rondas
+  con un entero entre 1 y $k$.
+
+  Posteriormente, cada una de las siguientes $k$ líneas contiene $n$ enteros describiendo
+  una ronda.  Específicamente, el $j$-ésimo entero de la $i$-ésima fila contiene la jugada
+  del participante $j$ en la ronda $i$.
+  Un $0$ representa que el participante jugó piedra, un $1$ que jugó un papel y un $2$
+  que jugó tijera.
 \end{inputDescription}
 
 \begin{outputDescription}
-  Debes imprimir $n$ números, donde el $i$-ésimo número corresponde a la puntuación final del jugador $i$.
+  La salida debe contener $n$ enteros, donde el $i$-ésimo entero corresponde al
+  puntaje final del jugador $i$.
 \end{outputDescription}
 
 \begin{scoreDescription}
