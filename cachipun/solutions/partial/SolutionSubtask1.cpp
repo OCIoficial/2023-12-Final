@@ -1,4 +1,4 @@
-// @ocimatic should-pass=[st1]
+// @ocimatic should-fail=[st2, st3]
 // Ojala acepte eso uf
 #include <iostream>
 #include <vector>
