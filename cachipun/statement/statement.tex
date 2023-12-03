@@ -13,7 +13,8 @@
   En cada ronda, los participantes deben elegir entre jugar piedra, papel o tijera.
   Como es tradicional, la tijera le gana al papel, el papel a la piedra y la piedra a
   la tijera.
-  Luego de que todos los participantes revelan su opción de forma simultánea, se
+  Luego de que todos los participantes revelan su opción de forma simultánea, cada participante 
+  se enfrenta a cada otro participante y luego se
   calcula el puntaje de acuerdo a la cantidad de victorias y derrotas.
   Específicamente, cada participante gana $1$ punto por cada victoria
   y pierde $1$ punto por cada derrota.
@@ -44,11 +45,11 @@
 \end{problemDescription}
 
 \begin{inputDescription}
-  La primera línea de la entrada contiene dos enteros $n$ ($2 \leq n \leq 1000$)
-  y $k$ ($1 \leq k \leq 1000$), correspondientes a la cantidad de jugadores y de
+  La primera línea de la entrada contiene dos enteros $n$ ($2 \leq n \leq 3000$)
+  y $k$ ($1 \leq k \leq 3000$), correspondientes a la cantidad de jugadores y de
   rondas respectivamente.
-  Cada jugador es identificado con un entero entre 1 y $n$, mientras que las rondas
-  con un entero entre 1 y $k$.
+  Cada jugador es identificado con un entero entre $1$ y $n$, mientras que las rondas
+  con un entero entre $1$ y $k$.
 
   Posteriormente, cada una de las siguientes $k$ líneas contiene $n$ enteros describiendo
   una ronda.  Específicamente, el $j$-ésimo entero de la $i$-ésima fila contiene la jugada

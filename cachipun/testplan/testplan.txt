@@ -8,14 +8,14 @@
   rand_chico ; gen_random.py 2 10
   rand_chico ; gen_random.py 2 10
 
-  rand_medio ; gen_random.py 2 100
-  rand_medio ; gen_random.py 2 100
+  rand_medio ; gen_random.py 2 500
+  rand_medio ; gen_random.py 2 600
 
-  rand_grande ; gen_random.py 2 1000
-  rand_grande ; gen_random.py 2 1000
+  rand_grande ; gen_random.py 2 3000
+  rand_grande ; gen_random.py 2 3000
 
-  empate ; gen_tie.py 2 100
-  empate ; gen_tie.py 2 1000
+  empate ; gen_tie.py 2 500
+  empate ; gen_tie.py 2 3000
 
 [Subtask 2]
   @extends subtask 1
@@ -26,19 +26,19 @@
   rand_chico ; gen_random.py 20 10
   rand_chico ; gen_random.py 15 5
 
-  rand_medio ; gen_random.py 50 600
-  rand_medio ; gen_random.py 60 400
+  rand_medio ; gen_random.py 50 1500
+  rand_medio ; gen_random.py 60 1000
 
-  rand_grande ; gen_random.py 100 1000
-  rand_grande ; gen_random.py 100 1000
+  rand_grande ; gen_random.py 100 3000
+  rand_grande ; gen_random.py 100 3000
 
-  empate ; gen_tie.py 100 1000
+  empate ; gen_tie.py 100 3000
 
 [Subtask 3]
   @extends subtask 2
 
-  rand_maximo ; gen_random.py 1000 1000
-  rand_maximo ; gen_random.py 1000 1000
-  rand_maximo ; gen_random.py 1000 1000
+  rand_maximo ; gen_random.py 3000 3000
+  rand_maximo ; gen_random.py 3000 3000
+  rand_maximo ; gen_random.py 3000 3000
 
-  empate_maximo ; gen_tie.py 1000 1000
+  empate_maximo ; gen_tie.py 3000 3000
