@@ -54,7 +54,7 @@ int main(){
 		dist[p.first][p.second] = 0;
 		if(wall[p.first][p.second]) intersect++;
 	}
-	int mindist;
+	int mindist = 1e9;
 	while(!q.empty()){
 		int x = q.front().first;
 		int y = q.front().second;
@@ -69,14 +69,14 @@ int main(){
 		for(int k = 0; k<4; k++){
 			int xx = x+di[k];
 			int yy = y+dj[k];
-			if(xx < 0 || xx >=n || yy < 0 || yy >= n || vis[xx][yy]) continue;
+			if(xx < 0 || xx >=n || yy < 0 || yy >= m || vis[xx][yy]) continue;
 			q.push({xx,yy});
-			dist[xx][yy] = d + 1;
+			dist[xx][yy] = min(dist[xx][yy], d + 1);
 		}
 	}
 	// la respuesta se puede descomponer en:
 	// operaciones para dejar un bloque al lado de la figura final max(0, mindist-1)
-	// operaciones para rellenar la figura final (tamaño de la figura - bloques ya intersectados)
+	// operaciones para rellenar la figura final (tamaño de la figura -)
 	cout << max(0, mindist-1) + cntwall - intersect << '\n';
 	return 0;
 }
