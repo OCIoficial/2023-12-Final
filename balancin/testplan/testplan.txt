@@ -24,7 +24,7 @@
 
 
 # We don't define a validator for this subtask.
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   @extends subtask 1
 
   rand-2 ; gen_random.cpp 1 1000000
@@ -37,7 +37,7 @@
 
   border ; echo 999998 999999 1000000
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   @extends subtask 2
   rand-3 ; gen_random.cpp 1 1000000000
   rand-3 ; gen_random.cpp 1 1000000000

@@ -1,10 +1,14 @@
 #include "testlib.h"
 
+using namespace std;
+
 int main() {
   registerValidation();
-  inf.readInt(-1e9, 1e9, "a");
+  int n = inf.readInt(1, 1'000, "n");
   inf.readSpace();
-  inf.readInt(-1e9, 1e9, "b");
+  int c = inf.readInt(1, 1'000, "c");
+  inf.readSpace();
+  int g = inf.readInt(1, 1'000, "g");
   inf.readEoln();
   inf.readEof();
 }
