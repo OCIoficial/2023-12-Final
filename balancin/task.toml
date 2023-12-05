@@ -5,7 +5,7 @@ codename = "balancin"
 
 # The priority is used to sort tasks in the final pdf. Specifically,
 # tasks are sorted by first comparing the priority and then the codename.
-priority = 0
+priority = 2
 
 [dataset]
 # If true, test cases must be manually placed in the dataset directory.

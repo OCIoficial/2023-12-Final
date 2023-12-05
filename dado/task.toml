@@ -1,7 +1,7 @@
 [task]
 # The task's codename. Java solutions must have a class using this
 # name. The codename is included in the final pdf.
-codename = "dado"
+codename = "dados"
 
 # The priority is used to sort tasks in the final pdf. Specifically,
 # tasks are sorted by first comparing the priority and then the codename.
