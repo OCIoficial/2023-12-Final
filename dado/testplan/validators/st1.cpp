@@ -1,5 +1,5 @@
-#include <map>
 #include "testlib.h"
+#include <map>
 
 using namespace std;
 
@@ -11,18 +11,14 @@ int main() {
 
   map<int, int> values_with_index;
   for (int i = 1; i <= n / 2; i++) {
-    int d = inf.readInt(1, n, "d_{" + to_string(i) + "}");
-    ensuref(
-      values_with_index.find(d) == values_with_index.end(),
-      "%d appeared twice (%d° and %d° values).",
-      d,
-      values_with_index[d],
-      i
-    );
-    values_with_index[d] = i;
-    if (i != n) {
+    if (i > 1) {
       inf.readSpace();
     }
+    int d = inf.readInt(1, n, "d_{" + to_string(i) + "}");
+    ensuref(!values_with_index.count(d),
+            "%d appeared twice (%d° and %d° values).", d,
+            *values_with_index.find(d), i);
+    values_with_index[d] = i;
   }
   inf.readEoln();
   inf.readEof();
