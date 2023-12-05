@@ -13,7 +13,7 @@
   # agregar casos faciles a mano (pendiente)
 
 # subtask 2: nm <= 2*1e3
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   @extends subtask 1
 
   rand ; generator.cpp 44 44 10
@@ -21,7 +21,7 @@
   rand ; generator.cpp 44 44 1000
   rand ; generator.cpp 44 44 1936
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   @extends subtask 2
   
   rand ; generator.cpp 447 447 10
