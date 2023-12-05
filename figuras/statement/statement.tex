@@ -39,7 +39,7 @@ formado por una grilla de $n$ filas y $m$ columnas.
 Las filas son numeradas de arriba hacia abajo entre 1 y $n$, mientras
 que las columnas de izquierda a derecha entre 1 y $m$.
 %
-La celda en la fila $i$ y columna $j$ es identificada con el par $(i, j)$.
+La casilla en la fila $i$ y columna $j$ es identificada con el par $(i, j)$.
 
 Algunas de las casillas en la grilla tienen azulejos que forman
 una \emph{figura conexa}.
@@ -63,11 +63,11 @@ con azulejos en las posiciones $(3, 3)$, $(3, 4)$ y $(3, 5)$.
   \end{tikzpicture}
 \end{center}
 
-En el centro de la sala, hay un tablero formado también por
+En el centro de la sala hay además un tablero formado también por
 una grilla de $n\times m$.
 %
 Sobre el tablero, hay fichas que pueden moverse entre
-las casillas.
+sus casillas.
 %
 La cantidad de fichas es la misma que la de azulejos, pero
 están dispuestas sobre el tablero en posiciones distintas.
@@ -178,13 +178,14 @@ en que es posible hacer coincidir las fichas con los azulejos.
   %
   El $j$-ésimo entero en la línea $i$ describe la casilla $(i, j)$ del tablero.
   %
-  Un 1 indica que la posición contiene una ficha y un 0 indica que la casilla
-  está vacía.
+  Un 1 indica que la casilla contiene una ficha y un 0 indica que está vacía.
 
   Las últimas $n$ líneas describen el mural usando el mismo formato para describir
   las casillas que tienen azulejos.
 
   Se garantiza que la cantidad de unos en el tablero y en el mural será la misma.
+  %
+  Adicionalmente, los unos en el tablero y en el mural forman ambos una figura conexa.
 \end{inputDescription}
 
 \begin{outputDescription}
@@ -202,7 +203,7 @@ los azulejos.
 
 \begin{sampleDescription}
 \sampleIO{sample-1}
-% \sampleIO{sample-2}
+\sampleIO{sample-2}
 \end{sampleDescription}
 
 \end{document}
