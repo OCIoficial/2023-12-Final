@@ -39,7 +39,7 @@ vector<vector<bool>> generateGrid(int n, int m, int i0, int j0, int cnt, uniform
         for(int k = 0; k<4; k++){
             int xx = x+di[k];
             int yy = y+dj[k];
-            if(xx < 0 || xx >=n || yy < 0 || yy >= n) continue;
+            if(xx < 0 || xx >= n || yy < 0 || yy >= m) continue;
             q.push({prio(gen), {xx,yy}});
         }
     }
