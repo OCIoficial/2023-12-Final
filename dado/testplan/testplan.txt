@@ -1,4 +1,4 @@
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   # Casos de ejemplo
   sample ; copy statement/sample-*.in
 
@@ -18,7 +18,7 @@
   random-no ; gen_random_no.py 250
   random-no ; gen_random_no.py 500
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   @extends subtask 1
 
   # Casos random con si
