@@ -1,3 +1,4 @@
+#include <queue>
 #include <set>
 #include <utility>
 #include <vector>
@@ -11,6 +12,7 @@ const vector<pair<int, int>> DIRECTIONS {
     {+0, -1},
     {-1, +0},
 };
+
 
 /**
  * Check whether this grid contains a single side-wise connected component of ones.
@@ -35,13 +37,14 @@ bool is_connected(vector<vector<int>> grid) {
   }
   if (s_i == 0) return false;
 
-  deque<pair<int, int>> unvisited;
+  queue<pair<int, int>> unvisited;
   set<pair<int, int>> marked;
 
   marked.insert(pair<int, int>(s_i, s_j));
   unvisited.push(pair<int, int>(s_i, s_j));
   while (!unvisited.empty()) {
-    pair<int, int> visiting = unvisited.pop();
+    pair<int, int> visiting = unvisited.front();
+    unvisited.pop();
     for (auto d: DIRECTIONS) {
       pair<int, int> n{visiting.first + d.first, visiting.second + d.second};
 
@@ -79,9 +82,9 @@ int main() {
 
   for (int i = 1; i <= n; i++) {
     for (int j = 1; j <= m; j++) {
-      int c = inf.readInt(0, 1, "c_{" + i + "," + j + "}");
-      n_tokens += c;
-      board[i][j] = c;
+      int b = inf.readInt(0, 1, "b_{" + to_string(i) + "," + to_string(j) + "}");
+      n_tokens += b;
+      board[i][j] = b;
       if (j != m) {
         inf.readSpace();
       }
@@ -91,7 +94,7 @@ int main() {
 
   for (int i = 1; i <= n; i++) {
     for (int j = 1; j <= m; j++) {
-      int c = inf.readInt(0, 1, "c_{" + i + "," + j + "}");
+      int c = inf.readInt(0, 1, "c_{" + to_string(i) + "," + to_string(j) + "}");
       n_tiles += c;
       mural[i][j] = c;
       if (j != m) {
@@ -108,8 +111,8 @@ int main() {
     n_tiles
   );
 
-  ensure(is_connected(board), "The tokens in the board do not form a connected figure.");
-  ensure(is_connected(mural), "The tiles in the mural do not form a connected figure.");
+  ensuref(is_connected(board), "The tokens in the board do not form a connected figure.");
+  ensuref(is_connected(mural), "The tiles in the mural do not form a connected figure.");
 
   inf.readEof();
 }
