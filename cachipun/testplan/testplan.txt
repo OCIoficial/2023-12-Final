@@ -1,6 +1,6 @@
 # Testplan Cachipun
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
 
   # Sample-1 es el único con n=2
   sample ; copy statement/sample-1.in
@@ -17,7 +17,7 @@
   empate ; gen_tie.py 2 500
   empate ; gen_tie.py 2 3000
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   @extends subtask 1
 
   sample ; copy statement/sample-2.in
@@ -34,7 +34,7 @@
 
   empate ; gen_tie.py 100 3000
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   @extends subtask 2
 
   rand_maximo ; gen_random.py 3000 3000
