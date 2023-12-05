@@ -74,13 +74,19 @@ int main(int argc, char *argv[]) {
     // printeamos las grillas
     for(int i = 0; i<n; i++){
         for(int j = 0; j<m; j++){
-            cout << grid1[i][j] << " ";
+            if (j > 0) {
+              cout << " ";
+            }
+            cout << grid1[i][j];
         }
         cout << '\n';
     }
     for(int i = 0; i<n; i++){
         for(int j = 0; j<m; j++){
-            cout << grid2[i][j] << " ";
+            if (j > 0) {
+              cout << " ";
+            }
+            cout << grid2[i][j];
         }
         cout << '\n';
     }
