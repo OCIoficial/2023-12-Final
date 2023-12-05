@@ -20,7 +20,7 @@ int main() {
         i
       );
       values_with_index[d] = i;
-      if (j != n) {
+      if (i != n) {
         inf.readSpace();
       }
     }

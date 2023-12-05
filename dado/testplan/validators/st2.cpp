@@ -1,18 +1,26 @@
+#include <map>
 #include "testlib.h"
 
 using namespace std;
 
 int main() {
   registerValidation();
-  int n = inf.readInt(2, 100, "n");
-  inf.readSpace();
-  int k = inf.readInt(1, 3'000, "k");
+  int n = inf.readInt(2, 1'000'000, "n");
+  ensuref(n % 2 == 0, "%d is not an even number.");
   inf.readEoln();
 
-  for (int i = 1; i <= k; i++) {
-    for (int j = 1; j <= n; j++) {
-      int d = inf.readInt(0, 2, "d_{" + to_string(i) + "," + to_string(j) + "}");
-      if (j != n) {
+  map<int, int> values_with_index;
+  for (int i = 1; i <= n / 2; i++) {
+      int d = inf.readInt(1, n, "d_{" + to_string(i) + "}");
+      ensuref(
+        values_with_index.find(d) == values_with_index.end(),
+        "%d appeared twice (%d° and %d° values).",
+        d,
+        values_with_index[d],
+        i
+      );
+      values_with_index[d] = i;
+      if (i != n) {
         inf.readSpace();
       }
     }
