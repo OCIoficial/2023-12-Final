@@ -111,6 +111,11 @@ int main() {
     n_tiles
   );
 
+  ensuref(
+    n_tokens > 1, 
+    "The number of tokens is 1"
+  );
+
   ensuref(is_connected(board), "The tokens in the board do not form a connected figure.");
   ensuref(is_connected(mural), "The tiles in the mural do not form a connected figure.");
 
