@@ -23,12 +23,12 @@
 Cuenta la leyenda que el templo sagrado de Cumpeo alberga una cámara
 secreta llena de tesoros.
 %
-En su última expedición, Sofía, una entrépita exploradora oriunda de
+En su última expedición, Sofía, una intrépida exploradora oriunda de
 Pelotillehue, encontró un pergamino que podría contener la clave para
 acceder a la cámara.
 %
-Lamentablemente, sus fuentes le han confirmado que Lucía, una exploradora
-de Buenas Peras, también tuvo acceso al pergamino.
+Lamentablemente, sus fuentes le han confirmado que su archirrival
+de Buenas Peras también tuvo acceso al pergamino.
 %
 Sofía no puede soportar la idea de perder contra alguien de Buenas Peras
 así que debe apresurarse para ser la primera en entrar a la cámara.
@@ -41,8 +41,8 @@ que las columnas de izquierda a derecha entre 1 y $m$.
 %
 La casilla en la fila $i$ y columna $j$ es identificada con el par $(i, j)$.
 
-Algunas de las casillas en la grilla tienen azulejos que forman
-una \emph{figura conexa}.
+Algunas de las casillas en la grilla tienen azulejos dispuestos de
+manera que forman una \emph{figura conexa}.
 %
 Es decir, todos los azulejos son \emph{adyacentes} a al menos un azulejo.
 %
@@ -88,17 +88,17 @@ en las posiciones $(1, 2)$, $(1, 3)$ y $(2, 3)$.
 \end{center}
 
 De acuerdo a las instrucciones en el pergamino, para abrir
-la puerta mágica a la cámara secreta hay que resolver el
+la puerta mágica a la cámara secreta, hay que resolver el
 acertijo del tablero.
 %
-El acertijo consiste en mover las fichas del tablero
-hasta que coincidan con los azulejos en el mural.
+El acertijo consiste en mover las fichas del tablero hasta
+que coincidan con los azulejos en el mural.
 %
 Esto pareciera ser sencillo, pero para activar el mecanismo
 mágico, las fichas deben moverse siguiendo una regla especial.
 %
 Específicamente, el único movimiento válido es tomar una ficha
-del tablero y colocarla adyacente a otra ficha de manera que en
+y colocarla adyacente a otra ficha de manera que en
 todo momento se forme una figura conexa.
 
 Dado el mural y el tablero en las imágenes anteriores, la siguiente
@@ -180,22 +180,22 @@ en que es posible hacer coincidir las fichas con los azulejos.
   %
   Un 1 indica que la casilla contiene una ficha y un 0 indica que está vacía.
 
-  Las últimas $n$ líneas describen el mural usando el mismo formato para describir
-  las casillas que tienen azulejos.
+  Las últimas $n$ líneas describen las casillas del mural con azulejos usando
+  el mismo formato.
 
   Se garantiza que la entrada cumple las siguientes condiciones:
   \begin{itemize}
     \item La cantidad de unos en el tablero y en el mural es la misma.
-    \item Los unos en el tablero y en el mural forman ambos una figura conexa.
     \item La cantidad de unos en el tablero y en el mural es mayor o igual que 2.
+    \item Los unos en el tablero y en el mural forman ambos una figura conexa.
   \end{itemize}
   %
 \end{inputDescription}
 
 \begin{outputDescription}
-La salida debe contener un entero, el número mínimo de movimientos
-requeridos para mover las casillas de forma que coincidan con
-los azulejos.
+La salida debe contener un entero igual al número mínimo de
+movimientos requeridos para mover las casillas de forma que
+coincidan con los azulejos.
 % En caso de que no se pueda, imprimir "IMPOSIBLE" (sin las comillas).
 \end{outputDescription}
 
