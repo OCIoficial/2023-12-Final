@@ -1,16 +1,6 @@
-# This is a test plan for the sample task. See the README.md next to this file for more details on
-# how to write a test plan.
-
-# We define a validator for this subtask. The path is relative to this file
 [Subtask 1 - validators/st1.cpp]
-
-  # You can use `copy` to use sample test cases in the test plan. Here we use a glob pattern
-  # to copy multiple files in a single command.
   sample ; copy statement/sample-*.in
 
-  # You can also use `copy` to specify manual test cases
-
-  # Use a script to generate a test case programatically
   rand-1 ; gen_random.cpp 1 1000
   rand-1 ; gen_random.cpp 1 1000
   rand-1 ; gen_random.cpp 1 1000
@@ -22,8 +12,9 @@
   coprime-1 ; echo 990 991 997
   coprime-1 ; echo 1000 991 997
 
+  gcd-gt-sqrt; echo 3 662 993
+  gcd-gt-sqrt; echo 2 662 993
 
-# We don't define a validator for this subtask.
 [Subtask 2 - validators/st2.cpp]
   @extends subtask 1
 
@@ -37,6 +28,9 @@
 
   border ; echo 999998 999999 1000000
 
+  gcd-gt-sqrt ; echo 3 66214 99321
+  gcd-gt-sqrt ; echo 2 66214 99321
+
 [Subtask 3 - validators/st3.cpp]
   @extends subtask 2
   rand-3 ; gen_random.cpp 1 1000000000
@@ -48,3 +42,6 @@
   coprime-3 ; echo 1000000000 999999929 999999937
 
   border ; echo 999999998 999999999 1000000000
+
+  gcd-gt-sqrt ; echo 3 358847422 538271133
+  gcd-gt-sqrt ; echo 2 358847422 538271133

@@ -9,17 +9,25 @@ class balancin {
         int c = in.nextInt();
         int g = in.nextInt();
 
+        int min = Math.min(c, g);
+        int max = Math.max(c, g);
+
         int gcd = 1;
-        for (int i = 1; i <= Math.sqrt(Math.min(c, g)); ++i) {
-            if (c % i == 0 && g % i == 0) {
+        for (int i = 1; i <= 31623; ++i) {
+            if (min % i == 0 && max % i == 0) {
                 gcd = Math.max(gcd, i);
+            }
+            if (min % i == 0 && max % (min/i) == 0) {
+                gcd = Math.max(gcd, min/i);
             }
         }
 
-        if ((c / gcd <= n && g / gcd <= n) || Math.max(c, g) % Math.min(c, g) == 0) {
+        if (min / gcd <= n && max / gcd <= n) {
             System.out.println("SI");
         } else {
             System.out.println("NO");
         }
     }
 }
+
+
