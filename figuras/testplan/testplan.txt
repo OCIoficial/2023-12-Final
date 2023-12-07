@@ -11,8 +11,7 @@
   sample ; copy statement/sample-1.in
 
   # Manual cases
-  manual ; copy testplan/manual_cases/st1-1.in
-  manual ; copy testplan/manual_cases/st1-2.in
+  manual ; copy testplan/manual-cases/st1-*.in
 
 # subtask 2: nm <= 2*1e3
 [Subtask 2 - validators/st2.cpp]
@@ -23,12 +22,7 @@
   sample ; copy statement/sample-2.in
 
   # Manual cases
-  manual ; copy testplan/manual_cases/st1-1.in
-  manual ; copy testplan/manual_cases/st1-2.in
-  manual ; copy testplan/manual_cases/st2-1.in
-  manual ; copy testplan/manual_cases/st2-2.in
-  manual ; copy testplan/manual_cases/st2-3.in
-  manual ; copy testplan/manual_cases/st2-4.in
+  manual ; copy testplan/manual-cases/st2-*.in
 
   rand ; generator.cpp 44 44 10
   rand ; generator.cpp 44 44 100
@@ -41,14 +35,6 @@
   # Sample cases
   sample ; copy statement/sample-1.in
   sample ; copy statement/sample-2.in
-
-  # Manual cases
-  manual ; copy testplan/manual_cases/st1-1.in
-  manual ; copy testplan/manual_cases/st1-2.in
-  manual ; copy testplan/manual_cases/st2-1.in
-  manual ; copy testplan/manual_cases/st2-2.in
-  manual ; copy testplan/manual_cases/st2-3.in
-  manual ; copy testplan/manual_cases/st2-4.in
 
   rand ; generator.cpp 447 447 10
   rand ; generator.cpp 447 447 100
