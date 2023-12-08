@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <queue>
 #include <vector>
+#include <tuple>
 using namespace std;
 
 template <typename F>
